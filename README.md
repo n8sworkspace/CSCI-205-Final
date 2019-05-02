@@ -67,7 +67,7 @@ Fix security so website can execute backend C++ code:
 sudo chmod 4755 /var/www/html/
 ```
 
-You should now be able to test the front end system or run the compiled blink.cpp.
+You should now be able to test the front end system or run the compiled n8.cpp.
 
 ## Temperature Sensor
 ```
