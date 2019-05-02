@@ -1,45 +1,39 @@
 # Blinky Project
 
-This is a simple IoT program written for CSCI113 in C++ (Backend Script), PHP (Server side API), and jQuery/Bootstrap (FrontEnd UI).  
+CSCI 205 Programming Languages w/ C/C++
+The final project for the course will provide an introduction to the Internet of Things (IOT) using the Raspberry Pi and the GPIO interface. In addition to C++ programming, it requires the use of a web server, HTML, and either client-side scripting using javascript or server-side scripting using php. In this particular case, I’ve employed php.   
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-A version of blinky (the executable/compiled blink.cpp) is already compiled to run on the Raspberry pi.  If one ever wants to run the software on a Windows based computer blink.cpp would need to be recompiled with G++. See below.
+Assuming that the user has a Raspberry Pi 3 already up and running (if not, here is a user guide provided by The Raspberry Pi foundation.) For this project I’m using the Raspbian distribution and to smooth a replication of this project, I recommend using it as well. 
+The following instructions will get you up and running on your Raspberry Pi. Each command should be entered into terminal as posted. 
 
 ### Prerequisites
-
-Clone Repo first:
-
+First, clone the repository by opening :
 ```
-sudo git clone https://github.com/jd4rider/blinkyproj.git
+sudo git clone https://github.com/n8sworkspace/CSCI-205-Final.git
 ```
-
-Be sure you have g++ insalled.
-
+Verify that you have g++ insalled.
 ```
 which g++
 ```
-
-Should return something like.
-
+Terminal should return something like this:
 ```
 /usr/bin/g++
 ```
-
-If it says it doesn't exist execute the following to get MINGW g++.
-
+If it says it doesn't exist, execute the following to get MINGW g++.
 ```
 sudo apt-get install mingw-w64
 ```
 
-### Installing
+### Hardware wiring 
+Included within the Documentation folder ( found from the cloned github, Open filemanager -> pi/ n8sworkspace/CSCI-205-Final/documentation ) I’ve included a hardware required list within the appropriate folder. 
+Using the LED and Temp Sensor folders as a visual reference, set up your breadboard.
+During this project, we will be using the Cannakit GPIO header. Following the visual references provided, GPIO 17 will employ the LED and GPIO 4 will employ the temp sensor.
 
-A step by step series of examples that tell you how to get a development env running
+### Installing
+The following steps will get the required files in the correct places.
 
 You need MINGW's G++ to compile blink.cpp.  The PHP API is coded to use ./blinky so the following would need to be executed:
-
 First step, Compile C++ Source code
 
 ```
