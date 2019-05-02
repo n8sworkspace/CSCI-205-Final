@@ -1,4 +1,4 @@
-# Blinky Project
+# Project
 
 CSCI 205 Programming Languages w/ C/C++
 The final project for the course will provide an introduction to the Internet of Things (IOT) using the Raspberry Pi and the GPIO interface. In addition to C++ programming, it requires the use of a web server, HTML, and either client-side scripting using javascript or server-side scripting using php. In this particular case, I’ve employed php.   
