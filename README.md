@@ -34,44 +34,88 @@ During this project, we will be using the Cannakit GPIO header. Following the vi
 The following steps will get the required files in the correct places.
 
 You need MINGW's G++ to compile blink.cpp.  The PHP API is coded to use ./blinky so the following would need to be executed:
-First step, Compile C++ Source code
+First step, Compile C++ Source code by calling the cloned github folder first
 
 ```
-cd blinkyproj
-sudo g++ -Wall -o blinky blink.cpp -lwiringPi
+cd CSCI-205-Final
+sudo g++ -Wall -o n8blinky n8.cpp -lwiringPi -Wno-uninitialized 
+
 ```
+
+We are now going to create the script our php will employ as well as check to see if our hardware configuration is up and working. Also, the chmod command will fix the security to make the script available to everyone. 
 Second step, move blinky to /website folder. Be sure you are currently in the /blinkyproj folder. (You should be from cd step taken above.) 
 
 ```
-sudo cp blinky website/blinky
+sudo cp n8blinky /usr/lib/cgi-bin 
+cd
+cd /usr/lib/cgi-bin
+sudo chmod 4755 n8blinky
 ```
 
-Third step, move the website folder to /var/www/html. Be sure you are currently in the /blinkyproj folder. (You should be from cd step taken above.) 
+
+Third step, move the website folder to /var/www/html. We are going to make sure we’re in the correct folder first. 
 
 ```
-sudo cp -r website /var/www/html/website
+Cd
+Cd cd CSCI-205-Final/
+sudo cp -r web/*  /var/www/html/
 ```
 
 Fix security so website can execute backend C++ code:
 
 ```
-sudo chmod 4755 /var/www/html/website/blinky
+sudo chmod 4755 /var/www/html/
 ```
 
 You should now be able to test the front end system or run the compiled blink.cpp.
 
+## Temperature Sensor
+```
+sudo leafpad /boot/config.txt
+```
+paste: 
+```
+#DS18B20 temperature sensor probe (where x is my gpio pin)
+dtoverlay=w1-gpio-pullup,gpiopin=x
+```
+	save and exit
+	reboot
+	open terminal and input the following lines
+```
+sudo modprobe w1-gpio-pullup
+sudo modprobe w1-therm
+```
+	change directories to the following ( by exicuting the following command)
+```
+cd /sys/bus/w1/devices
+ls
+```
+	providing the ls command will "list" (definition of ls) the current directory files and folders. 
+
+	within the current directory, you should see a directory like this
+	"28-0000075dd99c". Change to this directory using
+```	
+cd 28-0000075dd99c
+```
+	then exicuting the following code, the following last value of the following output (t=xxxxx)
+	indicates the current temperature - well sortof. Take t=xxxx / 1000 to calcuate the celsius temperature. 
+	
+	Within our n8.cpp program, we have provided code that will take t=xxxxx as an input value and properly 
+	display a degrees Fahrenheit value.
+
+
 ## Running the tests
 
-Run ./blinky with different flags (s - light status, o - turn light on, f - turn light off, b - blink light twice, t - check temperature)
+Run ./n8blinky with different flags (s - light status, o - turn light on, f - turn light off, b - blink light twice, t - check temperature)
 
 ```
-./blinky s
+./n8blinky s
 ```
 
-Run ./blinky without a flag to get menu.
+Run ./n8blinky without a flag to get menu.
 
 ```
-./blinky
+./n8blinky
 ```
 
 Try going to the website while on the same network:
@@ -88,6 +132,4 @@ Navigate to the following where x.x.x.x is Raspberry PI's Public IP address foun
 http://x.x.x.x/website
 ```
 
-## Documentation
 
-Documentation, like UML and Hardware diagrams, are located in the /documentation folder of this project.
