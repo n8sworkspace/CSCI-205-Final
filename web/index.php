@@ -44,7 +44,7 @@ browser.
             <div class="form-check disabled">
                 <label class="form-check-label">
                     <input type="radio" class="form-check-input" name="GPIOcontrol" id="optionsRadios3" value="b">
-                Blink the light
+                Blink the light 2 times
                 </label>
             </div>
             <div class="form-check disabled">

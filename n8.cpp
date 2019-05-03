@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	//variable to store selection
 	string selection;
 	
-	int userIn;
+	int userIn = 0;
 
 	if(argc > 1){
 		if(string(argv[1]) == "s") cout<<"The Status of the light is: "<<b.status()<<endl;
