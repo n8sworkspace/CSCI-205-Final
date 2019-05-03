@@ -58,7 +58,7 @@ cd
 cd /usr/lib/cgi-bin
 sudo chmod 4755 n8blinky
 ```
-Move the web folder to /var/www/html. We are going to make sure we’re in the correct folder first. 
+Copy the contents from the web folder to /var/www/html. We are going to make sure we’re in the correct folder first then preform the copy. 
 ```
 cd
 cd CSCI-205-Final/
@@ -94,30 +94,33 @@ ls
 ```
 Providing the ls command will "list" (definition of ls) the current directory files and folders; 
 
-Within the current directory, you should see a directory like this
-"28-0000075dd99c". Change to this directory by calling the directory by using the following code. (Note- if your 28-xxx... does not match, change it appropriately or use the Linux systems’ autocomplete by starting to type " cd 28-00” (then the tab key and it should autocomplete.)
+Within the current directory, you should see a directory like this "28-0000075dd99c". Change to this directory by calling the directory by using the following code. (Note- if your 28-xxx... does not match, change it appropriately or use the Linux systems’ autocomplete by starting to type " cd 28-00” (then the tab key and it should autocomplete.)
 ```	
 cd 28-0000075dd99c
 ```
-then exicuting the following code, the following last value of the following output (t=xxxxx)
+Then exicuting the following code, the following last value of the following output (t=xxxxx)
 indicates the current temperature - well sortof. Take t=xxxx / 1000 to calcuate the celsius temperature. 
 ```
 cat w1_slave
 ```
 Within our n8.cpp program, code is provided that will take t=xxxxx as an input value and properly 
-display a degrees Fahrenheit value.
+display a current Fahrenheit value.
 
 
 ## Running the tests
 
-Calling the CSCI-205-Final folder we can now run the  ./n8blinky script  with different flags (s - light status, o - turn light on, f - turn light off, b - blink light a designated amount of times and t - check temperature) 
+Calling the CSCI-205-Final folder we can now run the "./n8blinky" script  with different flags (s - light status, o - turn light on, f - turn light off, b - blink light a designated amount of times and t - check temperature)
+First we will need to make the script executable, then we can run it using "./"
 
 ```
 cd /home/pi/CSCI-205-Final
+sudo chmod+x n8blinky
 ./n8blinky s
 ```
+Try the other flags on your own using the same method!
 
-Run ./n8blinky without a flag to get menu.
+
+Now run ./n8blinky without a flag to get menu.
 
 ```
 ./n8blinky
@@ -125,7 +128,7 @@ Run ./n8blinky without a flag to get menu.
 
 Try going to the website while on the same network:
 
-Find IP address of RPio 
+Find IP address of RPio
 
 ```
 ifconfig
@@ -134,5 +137,8 @@ ifconfig
 Navigate to the following where x.x.x.x is Raspberry PI's Public IP address found above. (x.x.x.x = Public IP address)
 
 ```
-http://x.x.x.x/website
+http://x.x.x.x/index.php
 ```
+Now have a bit of fun running the program from browser!
+
+Enjoy and keep tinkering! You've successfully completed the project.👊
