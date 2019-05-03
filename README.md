@@ -88,7 +88,7 @@ ls
 Providing the ls command will "list" (definition of ls) the current directory files and folders; 
 
 Within the current directory, you should see a directory like this
-"28-0000075dd99c". Change to this directory by calling it using the following:(if your 28-xxx... does not match, change it appropriately or use the Linux systems’ autocomplete by starting to type " cd 28-00” (then the tab key and it should autocomplete.)
+"28-0000075dd99c". Change to this directory by calling the directory by using the following code. (Note- if your 28-xxx... does not match, change it appropriately or use the Linux systems’ autocomplete by starting to type " cd 28-00” (then the tab key and it should autocomplete.)
 ```	
 cd 28-0000075dd99c
 ```
