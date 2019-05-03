@@ -1,7 +1,12 @@
-# Project
+# Main purpose and functionality
+Today we will employ a Raspberry Pi 3 to read the current temperature and do some basic functions with LED’s using a webpage and the C++ programming language.
 
-CSCI 205 Programming Languages w/ C/C++
-The final project for the course will provide an introduction to the Internet of Things (IOT) using the Raspberry Pi and the GPIO interface. In addition to C++ programming, it requires the use of a web server, HTML, and either client-side scripting using javascript or server-side scripting using php. In this particular case, I’ve employed php.   
+## Project
+For the course of CSCI 205- Programming Languages w/ C/C++
+
+The final project for the course will provide an introduction to the Internet of Things (IOT) using the Raspberry Pi and the GPIO interface. In addition to C++ programming, it requires the use of a web server, HTML, and either client-side scripting using javascript or server-side scripting using php. In this particular case, I’ve employed php.
+
+The project overview and outline is found in the appropriate folder within this repository. 
 
 ## Getting Started
 Assuming that the user has a Raspberry Pi 3 already up and running (if not, here (https://www.raspberrypi.org/documentation/) is a user guide to get you started provided by The Raspberry Pi foundation.) For this project, I’m using the Raspbian distribution (https://www.raspberrypi.org/documentation/raspbian/) and to smooth a replication of this project, I recommend using it as well. 
@@ -28,14 +33,16 @@ sudo apt-get install mingw-w64
 ### Hardware wiring 
 Included within the Documentation folder ( found from the cloned github, Open filemanager -> pi/ n8sworkspace/CSCI-205-Final/documentation ) I’ve included a "hardware required" list within the appropriate folder for reference purposes. 
 
-Using the LED and Temp Sensor folders as a visual reference, set up your breadboard.
+Using the LED and Temp Sensor folders as a visual reference, set up your breadboard. 
+Create the circuit by placing a 330 ohm resistor between the LED and the ground wire keeping in mind polarity of the LED. You will find a reference image depicting polarity within the LED folder of documentation. 
+You will also notice the temperature sensor also needs a resistor between the 3.3v power lead and the data lead. 
 During this project, we will be using the Cannakit GPIO header. Following the visual references provided, GPIO pin #17 will employ the LED and GPIO pin #4 will employ the temp sensor. - A word of advice, within the C++ code, you'll notice that GPIO pin #17 is never defined. This is because the 'WiringPi GPIO Pin Numbering Tables' imported from the wiringPi libary redefines the pin numbers appropriately. More information on this subject can be found here (http://wiringpi.com/pins/).
 
 ### Installing
 The following steps will get the required files in the correct places.
 
 You need MINGW's G++ to compile n8.cpp. The PHP API is coded to use ./n8blinky so the following would need to be executed:
-First step, Compile C++ Source code by calling the cloned github folder first
+First step, Compile C++ Source code by calling the cloned github folder first.
 
 ```
 cd CSCI-205-Final
